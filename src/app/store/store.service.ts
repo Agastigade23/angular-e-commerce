@@ -6,13 +6,14 @@ import { Product } from '../shared/models/Product';
 import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
 import { StoreParams } from '../shared/models/storeParams';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-  private apiUrl = 'http://localhost:5103/api/v1/Products/';
+  private apiUrl = `${environment.apiUrl}/v1/Products/`;
 
   constructor(private http: HttpClient) {}
 
